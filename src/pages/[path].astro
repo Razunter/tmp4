@@ -1,0 +1,23 @@
+---
+const {path} = Astro.params
+
+if (!path) {
+  return Astro.redirect("/404")
+}
+
+type NavData = [
+  {
+    [key: string]: any;
+    path: string;
+    skip?: boolean;
+    related?: {
+      [key: string]: any;
+      id: number;
+    };
+  }
+]
+---
+
+<article class="article">
+  <main class="article__content"></main>
+</article>
